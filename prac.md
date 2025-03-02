@@ -52,5 +52,42 @@ make
 make install
 ```
 
+#### 配置环境
+这个脚本的作用是：
+	1.	设置 PostgreSQL 运行所需的环境变量
+	2.	方便启动和停止数据库服务器
+```
+PGDATA = z5525533/pgsql/data
+PGHOST = z5525533/pgsql
+PGPORT=5432
+LD_LIBRARY_PATH = z5525533/pgsql/lib
+PATH = pgsql/bin:/home/cs9315/bin:$PATH
+
+alias p0="$PGHOME/bin/pg_ctl stop"
+alias p1="$PGHOME/bin/pg_ctl -l $PGDATA/log start"
+```
+每次在新终端窗口中使用 PostgreSQL 之前，都需要执行：
+```
+// source 命令会读取 env 文件，并在当前 shell 会话中设置这些环境变量。
+// 必须使用 source，不能直接运行 ./env，否则环境变量不会生效。
+source /localstorage/z5525533/env
+
+echo $PGDATA
+=> /localstorage/z5525533/pgsql/data
+
+which initdb
+=> /localstorage/z5525533/pgsql/bin/initdb
+```
+
+为了避免每次都手动执行 source，可以在 ~/.bashrc 或 ~/.bash_profile 末尾添加：
+```
+echo "source /localstorage/$USER/env" >> ~/.bashrc
+source ~/.bashrc
+```
+这样，每次打开新的终端窗口时，env 文件都会自动加载。
+
+## 成果🏅
+
+<img width="1204" alt="image" src="https://github.com/user-attachments/assets/73c03c5d-4a3b-436b-ade1-1c994782e80b" />
 
 
