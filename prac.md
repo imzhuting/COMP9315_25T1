@@ -102,4 +102,8 @@ psql beer
 ```
 
 
+### Week 2
+PL/pgSQL（Procedural Language/PostgreSQL Structured Query Language）是 PostgreSQL 中的一种过程式编程语言。它允许用户在 PostgreSQL 数据库中创建函数和触发器，提供了比标准 SQL 更复杂的控制结构，比如条件判断、循环、变量声明等。 
+
+
 
