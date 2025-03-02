@@ -91,3 +91,15 @@ source ~/.bashrc
 <img width="1204" alt="image" src="https://github.com/user-attachments/assets/73c03c5d-4a3b-436b-ade1-1c994782e80b" />
 
 
+```
+create beer
+psql beer -f /web/cs9315/25T1/pracs/p01/beer.dump
+// 是一个 导入 SQL 文件到 PostgreSQL 数据库 的命令
+// dump 通常是 PostgreSQL 的 数据库备份文件，它包含一组 SQL 命令，用于重建数据库结构和数据。
+
+psql beer
+// 成功执行，beer 数据库就会被填充好数据，并可以进行进一步的操作，例如查询、更新或删除数据。
+```
+
+
+
